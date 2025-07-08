@@ -4,7 +4,7 @@
 
 ## Overview
 
-AutoWikiQ is a full-stack Python application built with Streamlit that automates the generation and evaluation of research-style questions from Wikipedia articles. It integrates human feedback with machine learning to progressively reduce manual review effort and maximize question quality.
+AutoWikiQ is a Python application built with Streamlit that automates the generation and evaluation of research-style questions from Wikipedia articles. It integrates human feedback with machine learning to progressively reduce manual review effort and maximize question quality.
 
 ## Key Features
 
@@ -46,48 +46,3 @@ AutoWikiQ is a full-stack Python application built with Streamlit that automates
   * A reproducible pipeline that generates N high-confidence, research-style questions on any Wikipedia topic in seconds.
   * A trained model capable of instantly predicting question acceptance with confidence scores.
   * Quantitative analytics showing reduction in human effort (e.g., calls-per-accepted-question) and a record of automatic vs. manual acceptance rates.
-
-## Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/yourusername/AutoWikiQ.git
-   cd AutoWikiQ
-   ```
-
-2. **Set up environment**
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-
-3. **Configure API Key**
-
-   ```bash
-   export GEMINI_API_KEY="your_gemini_key_here"
-   ```
-
-## Usage
-
-```bash
-streamlit run app.py
-```
-
-* **Mode 1**: Generate & Feedback (label questions)
-* **Mode 2**: Train Classifier (needs ≥ 10 labeled samples)
-* **Mode 3**: Test Classification (runs the automated pipeline)
-* **Mode 4**: View Analytics (plots acceptance metrics)
-
-## File Structure
-
-```
-├── app.py                      # Main Streamlit script
-├── questions_feedback.csv     # Human-labeled questions & status
-├── acceptance_history.csv      # Pipeline run metrics (M, N, rates)
-├── classified_questions.csv    # All auto-classified questions
-├── question_classifier.pkl     # Pickled TF-IDF & Random Forest model
-├── requirements.txt            # Python dependencies
-```
